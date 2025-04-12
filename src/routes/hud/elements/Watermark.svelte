@@ -57,17 +57,26 @@
         {#if session && showUsername}
             <div class="separator"></div>
             <div class="info">
-                {session.username}
+                <span class="wrapper">
+                    <img src="img/clickgui/icon-player.svg" alt="icon"/>
+                    {session.username}
+                </span>
             </div>
         {/if}
         <div class="separator"></div>
         <div class="info">
-            {time}
+            <span class="wrapper">
+                <img src="img/clickgui/icon-world.svg" alt="icon"/>
+                {time}
+            </span>
         </div>
         <div class="separator"></div>
         {#if clientInfo}
             <div class="info">
-                {clientInfo.fps}fps
+                <span class="wrapper">
+                    <img src="img/clickgui/icon-exploit.svg" alt="icon"/>
+                    {clientInfo.fps}fps
+                </span>
             </div>
         {/if}
     </div>
@@ -106,6 +115,19 @@
     padding: 0 8px;
   }
 
+  .wrapper {
+      display: flex;
+      align-items: center;
+      gap: 5px; 
+  }
+
+  .wrapper img {
+      width: 16px;
+      height: 16px;
+      animation: 2.5s ease pulsing infinite;
+      filter: brightness(75%);
+  }
+
   .logo {
     display: flex;
     align-items: center;
@@ -135,5 +157,9 @@
   img {
     width: 16px;
     height: 16px;
+  }
+
+  span {
+    margin-bottom: 1px
   }
 </style>
